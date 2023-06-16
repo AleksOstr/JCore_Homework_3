@@ -1,7 +1,9 @@
 public class Manager extends Employee {
-    public static void salaryUp(Employee employee, int raise) {
-        if (employee.getClass().getSimpleName().equals("Employee")) {
-            employee.setSalary(employee.getSalary() + raise);
+    public static void salaryUp(WorkersList workers, int raise) {
+        for (Employee employee : workers) {
+            if (!employee.getClass().getSimpleName().equalsIgnoreCase("manager")) {
+                employee.setSalary(employee.getSalary() + raise);
+            }
         }
     }
 
