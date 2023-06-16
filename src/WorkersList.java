@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Iterator;
 
 public class WorkersList implements Iterable<Employee> {
@@ -15,5 +16,9 @@ public class WorkersList implements Iterable<Employee> {
     @Override
     public Iterator<Employee> iterator() {
         return workers.listIterator();
+    }
+
+    public void sort(Comparator<Employee> comp) {
+        workers.sort(comp);
     }
 }
